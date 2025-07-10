@@ -1,46 +1,70 @@
+/*
+ *          ╭──────────────────────────────────────────────────────────╮
+ *          │                   KEYBINDS / keys.nix                    │
+ *          ╰──────────────────────────────────────────────────────────╯
+*/
 {
 	globals.mapleader = " ";
 	keymaps = [
-		#####################
-		#      NEOTREE      #
-		#####################
+		# ── NEOTREE ───────────────────────────────────────────────────────────
 		{
-			action = ":Neotree filesystem toggle<CR>";
-			key = "<leader> ";
+			action = ":Neotree filesystem reveal left<CR>";
+			key = "<leader>  ";
 		}
-		#####################
-		#        LSP        #
-		#####################
+		{
+			action = ":Neotree buffers reveal right<CR>";
+			key = "<leader> x";
+		}
+		{
+			action = ":Neotree filesystem close<CR>";
+			key = "<leader> z";
+		}
+		{
+			action = ":Neotree buffers close<CR>";
+			key = "<leader> c";
+		}
+		# ── LSP ───────────────────────────────────────────────────────────────
 		{
 			action = ":lua vim.lsp.buf.format()<CR>";
-			key = "<leader>f";
+			key = "<leader>lf";
 		}
 		{
 			action = ":lua vim.lsp.buf.hover()<CR>";
-			key = "<leader>h";
+			key = "<leader>lh";
 		}
 		{
 			action = ":lua vim.lsp.buf.definition()<CR>";
-			key = "<leader>d";
+			key = "<leader>ls";
 		}
 		{
 			action = ":lua vim.lsp.buf.code_action()<CR>";
-			key = "<leader>ca";
+			key = "<leader>la";
 		}
-		#####################
-		#     TELESCOPE     #
-		#####################
+		# ── TELESCOPE ─────────────────────────────────────────────────────────
 		{
 			action = ":Telescope find_files<CR>";
-			key = "<leader>b";
+			key = "<leader>fb";
 		}
 		{
 			action = ":Telescope live_grep<CR>";
-			key = "<leader>n";
+			key = "<leader>fn";
 		}
 		{
 			action = ":Telescope oldfiles<CR>";
-			key = "<leader>r";
+			key = "<leader>fr";
+		}
+		# ── COMMENT-BOX ───────────────────────────────────────────────────────
+		{
+			action = ":CBccbox<CR>";
+			key = "<leader>dt";
+		}
+		{
+			action = ":CBllline<CR>";
+			key = "<leader>ds";
+		}
+		{
+			action = ":CBd<CR>";
+			key = "<leader>du";
 		}
 	];
 }
